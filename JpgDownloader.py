@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 import re
-import requ
+import requests
 def downloadPic(html,keyword):
     jpg_url=re.findall('"objURL":"(.*?)",',html,re.S)
     i=0
@@ -22,5 +22,5 @@ def downloadPic(html,keyword):
 if __name__ == '__main__':
     word = input("输入关键字:")
     url = 'https://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word=' + word + '&pn=200&gsm=0&ct=&ic=0&lm=-1&width=0&height=0'
-    result=requests.get(url1)
+    result=requests.get(url)
     downloadPic(result.text,word)
